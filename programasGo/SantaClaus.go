@@ -22,6 +22,7 @@ func santa(f chan struct{}) {
 			for i := 0; i < 9; i++ {
 				reindeerSem.Signal()
 			}
+			//reindeers = 0
 		} else if elves == 3 { // chama o papai noel para ajudar caso tenha três elfos
 			helpElves()
 		}

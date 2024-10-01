@@ -53,8 +53,11 @@ func dance(role string) {
 }
 
 func main() {
-	wg.Add(2) //adc lider e seguidor ao waitgroup
-	go lider()
-	go seguidor()
+	wg.Add(8) //adc lideres e seguidores ao waitgroup
+
+	for i := 0; i < 4; i++ {
+		go lider()
+		go seguidor()
+	}
 	wg.Wait()
 }
